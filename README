@@ -1,0 +1,26 @@
+Eric Walker, Tony Kim (Sang Yeon Kim), Amy He, and Sharmila Tamby
+JHED IDs: ewalke31, skim340, ahe3, stamby1
+Intermediate Programming - 600.120
+Final Project - Part C
+
+This zip file includes:
+     Card.cpp, Card.h
+     buildingPile.cpp, buildingPile.h, Hand.cpp, Hand.h drawDeck.cpp, drawDeck.h, Pile.cpp, Pile.h, Stock.cpp, Stock.h
+     Computer.cpp, Computer.h, Game.cpp, Game.h, Human.cpp, Human.h, Players.cpp, Players.h
+     pileTest.cpp, playersTest.cpp, gameTest.cpp
+     SkipBoMain.cpp
+     Makefile, README
+
+EXTRA CREDIT: This program includes the AI extra credit. This is in the takeTurn() function in the Computer class. The AI prioritizes moves by first checking if a card can be played from the stock pile, then the hand, then the discard pile, recursing the function if it ever plays a card, so that it can start the priority list over again. Once none of these work, the AI chooses a reasonable card (the highest valued card above the stock pile card) to move from its hand to the discard pile.
+
+RUN PROGRAM:
+    type "make test" into command line to compile and run pileTest.cpp, playersTest.cpp, and gameTest.cpp
+    type "make" to compile SkipBoMain.cpp
+    type "./skipbo" to run SkipBoMain.cpp
+
+ORGANIZATION OF CODE/OOP FEATURES:
+1. Human and Computer are subclasses of Players. Hand, Stock, drawDeck and buildingPile are subclasses of Pile. Game includes a "has-a" association with Players.
+2. Exception handling is used in main (in SkipBoMain.cpp) and in makeMove() (in Human.cpp). These exceptions check whether user input is valid or if a move is valid.
+3. Data encapsulation is used when we declare data members as private.
+4. Players is an abstract base class because takeTurn() is a pure virtual function.
+5. Cards contains an operator overloader for the == operator to check when two cards are equal to each other.
